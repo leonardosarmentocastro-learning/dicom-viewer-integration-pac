@@ -1,6 +1,14 @@
-# Getting Started with Create React App
+# dicom-viewer-integration-pac
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Training project for teaching the basics around connecting a dicom viewer with a PAC (DCM4CHEE).
+
+## Progress checklist
+
+1. [x] Configure and run [DCM4CHEE using docker-compose](https://github.com/dcm4che/dcm4chee-arc-light/wiki/Run-minimum-set-of-archive-services-on-a-single-host#use-docker-compose)
+2. [] Add a viewport (cornerstone + cornerstone-tools) with an empty toolbar (no tools included), alongside a "download image" button (https://files.slack.com/files-pri/T03V6M5QV-F02RJAR1VQQ/image.png)
+3. [] Connect the viewer (cornerstone) with PAC (DCM4CHEE) using [`cornerstone-wado-image-loader`](https://www.npmjs.com/package/cornerstone-wado-image-loader)
+4. [] On button click, download a DICOM file from PAC and display it on dicom viewer
+5. [] Once DICOM file is displayed, renders the file overlay tag (6000) on viewport
 
 ## Available Scripts
 
@@ -29,42 +37,14 @@ Your app is ready to be deployed!
 
 See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-### `npm run eject`
+### `npm run docker:start`
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+Start all 3 containers (`ldap`, `db` and `arc`) using the configuration specified at `docker-compose.yml`, and the environment variables from `docker-compose.env`.
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+### `npm run docker:stop`
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+Stop all 3 containers (`ldap`, `db` and `arc`).
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+### `npm run docker:down`
 
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Stop and delete all 3 containers (`ldap`, `db` and `arc`).
