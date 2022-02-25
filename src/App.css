@@ -13,7 +13,7 @@
   border-radius: 1rem;
 }
 
-.App > .viewport {
+.App > #viewport {
   margin: 3rem 0;
 
   border: .3rem #616161 solid;
