@@ -5,7 +5,7 @@ Training project for teaching the basics around connecting a dicom viewer with a
 ## Progress checklist
 
 1. [x] Configure and run [DCM4CHEE using docker-compose](https://github.com/dcm4che/dcm4chee-arc-light/wiki/Run-minimum-set-of-archive-services-on-a-single-host#use-docker-compose)
-2. [] Add a viewport (cornerstone + cornerstone-wado-image-loader + dicom-parser) with an empty toolbar (no tools included), alongside a "download image" button (https://files.slack.com/files-pri/T03V6M5QV-F02RJAR1VQQ/image.png)
+2. [x] Add a viewport (cornerstone + cornerstone-wado-image-loader + dicom-parser) with an empty toolbar (no tools included), alongside a "download image" button (https://files.slack.com/files-pri/T03V6M5QV-F02RJAR1VQQ/image.png)
 3. [] Connect the viewer (cornerstone) with PAC (DCM4CHEE) using [`cornerstone-wado-image-loader`](https://www.npmjs.com/package/cornerstone-wado-image-loader)
 4. [] On button click, download a DICOM file from PAC and display it on dicom viewer
 5. [] Once DICOM file is displayed, renders the file overlay tag (6000) on viewport
