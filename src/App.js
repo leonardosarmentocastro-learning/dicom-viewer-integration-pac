@@ -50,7 +50,7 @@ const displayImage = async (event) => {
     // QUESTION/FIND OUT: how the redraw lifecycle works?
     const imageLoadObject = await cornerstone.loadImage(imageId); // 1
     const cornerstoneViewport = cornerstone.getDefaultViewportForImage(interactiveArea, imageLoadObject); // 2
-    cornerstone.displayImage(interactiveArea, imageLoadObject, cornerstoneViewport);
+    cornerstone.displayImage(interactiveArea, imageLoadObject, cornerstoneViewport); // 3
   } catch(err) {
     console.error(err);
   }
@@ -66,6 +66,7 @@ const displayImage = async (event) => {
 // >
 // > 2. The `dicom-parser` is responsible for reading the different byte streams of a DICOM file (tags) and translating it into an serializable object (JSON).
 // > https://github.com/cornerstonejs/dicomParser#usage
+// > https://rawgit.com/cornerstonejs/dicomParser/master/examples/index.html
 const init = () => {
   // > WADO stands for "Web Access to Dicom Objects", it's a protocol that server as a vehicle for obtaining DICOM files through the internet.
   // It's usually complemented by the suffix "RS", which indicates it also contains RESTful protocol implementation for querying files.
@@ -87,6 +88,7 @@ const init = () => {
   // const name = transferSyntaxes[transferSyntaxUid];
   // const filename = `${base}_${name}_${transferSyntaxUid}.dcm`
 // };
+
 const stopEvent = (event) => {
   event.stopPropagation();
   event.preventDefault();
